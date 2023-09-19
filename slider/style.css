@@ -1,0 +1,135 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    background-color: #333;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.buttons{
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    z-index: 9999;
+}
+.buttons label{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    background-color: white;
+    transition: .5s;
+    border-radius: 20px;
+}
+.tabs input{
+    visibility: hidden;
+    display: none;
+}
+.tabs input:nth-child(1):checked ~ .buttons label:nth-child(1){
+    width: 60px;
+}
+.tabs input:nth-child(2):checked ~ .buttons label:nth-child(2){
+    width: 60px;
+}
+.tabs input:nth-child(3):checked ~ .buttons label:nth-child(3){
+    width: 60px;
+}
+.container{
+    
+    height: 100vh;
+    display: flex;
+ 
+}
+.container .content{
+    width: 320vw;
+    top: 0;
+    left: -100vw;
+    position: absolute;
+    display: flex;
+    transition: .5s;
+}
+.container .content .box{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+}
+.container .content .box h1{
+    color: white;
+    font-size: 8em;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    margin-bottom: 100px;
+    justify-content:space-around;
+    gap: 20px;
+}
+.container .content .box h1 #text{
+    text-shadow: 1px 2px 2px white,
+    1px 4px 2px white,
+    2px 6px 2px white,
+    3px 8px 2px white,
+    4px 10px 2px white,
+    5px 12px 2px white;
+}
+.container .content .box p{
+   
+    position: absolute;
+    top: 50%;
+    width: 80%;
+    font-size: 1.8em;
+    text-align: center;
+    color: white;
+    font-family: monospace;
+    font-weight: bold;
+}
+.container .content .box h1 .icon{
+    font-size: 2em;
+}
+.container .content .box:nth-child(1){
+    background-image: linear-gradient(90deg,#930f93dd,#054ce633);
+}
+.container .content .box:nth-child(2){
+    background-image: linear-gradient(90deg,#0cbf36dd,#07e4e033);
+}
+.container .content .box:nth-child(3){  
+    background-image: linear-gradient(90deg,#f1b00add,hsla(0, 94%, 40%, 0.2));
+}
+.tabs input:nth-child(1):checked ~ .content{
+    left: 0;
+}
+.tabs input:nth-child(2):checked ~ .content{
+    left: -100vw;
+}
+.tabs input:nth-child(3):checked ~ .content{
+    left: -200vw;
+}
+.social{
+    display: flex;
+    gap: 20px;
+}
+.social span{
+    font-size: 1.9em;
+    color: #242424;
+    cursor: pointer;
+}
+.social span:hover{
+    color:#fff;
+    text-shadow: 0 0 15px #ff0;
+}
